@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Strategy Call</title>
+    <style>
+        /* Schedule Strategy Section Styling */
+        body {
+            margin: 0;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            font-family: 'Manrope', 'Nunito Sans', sans-serif;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center; /* Center text */
+        }
+
+        /* Section title styling */
+        .section-title {
+            font-size: 36px; /* Larger font size */
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Gradient highlight for the title */
+        .highlight-gradient {
+            background: linear-gradient(45deg, #F9D633, #EF972E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; /* Gradient text */
+        }
+
+        /* Section text styling */
+        .section-text {
+            font-size: 20px; /* Slightly larger for emphasis */
+            line-height: 1.6; /* Increased line height for readability */
+            margin-bottom: 40px; /* Spacing below the text */
+        }
+
+        /* Button styling for Schedule a Strategy Call */
+        .schedule-call-btn {
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000; /* Black text */
+            background-color: #EF972E; /* Solid background color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer; /* Pointer on hover */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth color transition */
+        }
+
+        /* Button hover effect */
+        .schedule-call-btn:hover {
+            background-color: #F9D633; /* Lighter background on hover */
+            color: #000; /* Black text on hover */
+            transform: scale(1.05); /* Slight scale effect */
+        }
+
+        /* Arrow container styling */
+        .arrow-container {
+            position: relative; /* Position relative for arrow positioning */
+            height: 50px; /* Height for positioning */
+            margin-bottom: 20px; /* Space between arrow and button */
+        }
+
+        /* Arrow styling */
+        .arrow {
+            font-size: 40px; /* Arrow size */
+            color: #F9D633; /* Arrow color */
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.5s ease; /* Smooth fade-in */
+            transform: translateY(-20px); /* Move the arrow up */
+        }
+
+        /* Visible arrow class */
+        .arrow.visible {
+            opacity: 1; /* Show the arrow */
+            transform: translateY(0); /* Reset position */
+        }
+    </style>
+</head>
+<body>
+    <div class="schedule-strategy-section">
+        <h2 class="section-title">
+            <span class="highlight-gradient">Schedule Your Strategy Call</span>
+        </h2>
+        <p class="section-text">
+            Ready to elevate your social media game? Click the button below to schedule a strategy call with us!
+        </p>
+
+        <div class="arrow-container">
+            <div class="arrow" id="arrow">&#8595;</div>
+        </div>
+
+        <button class="schedule-call-btn" onclick="openScheduler()">Schedule a Strategy Call</button>
+    </div>
+
+    <script>
+        function openScheduler() {
+            alert("Redirecting you to the scheduling software...");
+            window.location.href = 'https://your-scheduling-link.com'; // Replace with your scheduling link
+        }
+
+        // Track mouse movement to show arrow
+        const button = document.querySelector('.schedule-call-btn');
+        const arrow = document.getElementById('arrow');
+
+        button.addEventListener('mouseenter', () => {
+            arrow.classList.add('visible');
+        });
+
+        button.addEventListener('mouseleave', () => {
+            arrow.classList.remove('visible');
+        });
+    </script>
+</body>
+</html>
